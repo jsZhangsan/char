@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>My First chart using FusionCharts XT</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/FusionCharts.js"></script>
+		<script type="text/javascript">
+			var jsonStr = {
+				"chart": {
+					"yaxisname": "Sales Figure",
+					"caption": "Top 5 Sales Person",
+					"useroundedges": "100",
+					"bgcolor": "FFFFFF,FFFFFF",
+					"showborder": "0"
+				},
+				"data": [{
+					"label": "Alex",
+					"value": "25000"
+				}, {
+					"label": "Mark",
+					"value": "35000"
+				}, {
+					"label": "David",
+					"value": "42300"
+				}, {
+					"label": "Graham",
+					"value": "35300"
+				}, {
+					"label": "John",
+					"value": "31300"
+				}]
+			};
+			$(function() {
+				var myChart = new FusionCharts("swf/Column3D.swf",
+					"myChartId", "400", "300", "0");
+				myChart.setJSONData(jsonStr);
+				myChart.render("chartContainer");
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="chartContainer">FusionCharts XT will load here!</div>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Bar Chart</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Chart.js"></script>
+		<script type="text/javascript">
+			var data = [{
+				label: "一分监区",
+				value: 200,
+				color: "#3499DC"
+			}, {
+				label: "二分监区",
+				value: 50,
+				color: "#78C976"
+			}, {
+				label: "三分监区",
+				value: 100,
+				color: "#FFBB4A"
+			}, {
+				label: "四分监区",
+				value: 40,
+				color: "#FF5252"
+			}, {
+				label: "五分监区",
+				value: 40,
+				color: "#A3EFE8"
+			},{
+				label: "六分监区",
+				value: 40,
+				color: "#CDB576"
+			}, {
+				label: "七分监区",
+				value: 40,
+				color: "#1DCBB1"
+			}, {
+				label: "八分监区",
+				value: 120,
+				color: "#DE3259"
+			}, {
+				label: "九分监区",
+				value: 120,
+				color: "#0295B7"
+			}, {
+				label: "十分监区",
+				value: 120,
+				color: "#7264AB"
+			}, {
+				label: "十一分监区",
+				value: 120,
+				color: "#78C976"
+			}];
+			window.onload = function() {
+				var ctx = document.getElementById("canvas").getContext("2d");
+				var myChar = new Chart(ctx).Doughnut(data);
+				$("#aa").append(myChar.generateLegend());
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<div style="width: 550px;">
+				<canvas id="canvas" height="350" width="400"></canvas>
+				<div id="aa" style="float: right;height:350px;"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
